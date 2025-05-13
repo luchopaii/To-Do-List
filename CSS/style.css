@@ -1,0 +1,86 @@
+* {
+    font-family: 'Montserrat';
+}
+
+body{
+    font-family: 'Montserrat';
+    background-color: #0d1321;
+}
+
+.first-title{
+    color:  #f0ebdb;
+}
+
+.second-title, .third-title{
+    color: #748cab;
+}
+.subtitles{
+    color:  #f0ebdb;
+    margin: 0%;
+}
+
+
+.first-title{
+    text-align: center;
+}
+
+.principal-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    
+}
+
+.container-add{
+    margin:auto;
+    margin-left: 6%;
+}
+.name-task{
+    margin-bottom: 15px;
+}
+
+.container-Tasks{
+    margin-right: auto;
+    margin-right: 17%;
+}
+
+.task-list{
+    list-style-type: none;
+}
+
+.input-title-task{
+    width: 230%;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #748cab;
+    margin-top: 2px;
+}
+
+input::placeholder{
+    color: #f0ebdb;
+}
+
+.description-textarea{
+    width: 230%;
+    height: 70px;
+    border-radius: 8px;
+    background-color: #748cab;
+    margin-top: 2px;
+    resize: none;
+    opacity: 500;
+}
+
+textarea::placeholder{
+    color: #f0ebdb;
+}
+
+.add-task{
+    width: 235%;
+    height: 36px;
+    background-color: #1D2D44;
+    border-radius: 8px;
+    color: #f0ebdb;
+    margin-top: 2%;
+}
+

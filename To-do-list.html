@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="progress-bar">
+            <div id="progress" class="progress">
+                
+            </div>
+        </div>
+    </header>
+        <h1 class="first-title">To-Do-List</h1>
+    <div class="principal-container">
+         <div class="container-add">
+            <h2 class="second-title">Add Task</h2>
+            <div class="name-task">
+                <label for="title-task"><h5 class="subtitles">Title Task</h5></label>
+                <input class="input-title-task" type="text" placeholder="Type the title here">
+            </div>
+            <div class="description-task">
+                <label for="description-task"><h5 class="subtitles">Description Task</h5></label>
+                <textarea name="description-task"
+                placeholder="Type the description here" class="description-textarea"></textarea>
+            </div>
+            <button class="add-task">Add task</button>
+        </div>
+
+        <div class="container-Tasks">
+            <ul class="task-list">
+                <li><h2 class="third-title">Tasks</h2></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="JAVASCRIPT/Task.js"></script>
+</body>
+</html>
