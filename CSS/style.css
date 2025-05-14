@@ -9,6 +9,7 @@ body{
 
 .first-title{
     color:  #f0ebdb;
+    text-align: center;
 }
 
 .second-title, .third-title{
@@ -20,29 +21,30 @@ body{
 }
 
 
-.first-title{
-    text-align: center;
+.third-title{
+    margin-left: 40px;
+    flex-shrink: 0;
 }
 
 .principal-container{
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 20px;
-    
 }
 
 .container-add{
-    margin:auto;
     margin-left: 6%;
+    flex-shrink: 0;
 }
 .name-task{
     margin-bottom: 15px;
 }
 
 .container-Tasks{
-    margin-right: auto;
-    margin-right: 17%;
+    margin-right: 20%;
+    flex-shrink: 0;
+    text-align: left;
 }
 
 .task-list{
