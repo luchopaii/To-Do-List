@@ -22,8 +22,8 @@ body{
 
 
 .third-title{
+    margin-right: 230px;
     margin-left: 40px;
-    flex-shrink: 0;
 }
 
 .principal-container{
@@ -57,6 +57,8 @@ body{
     border-radius: 8px;
     background-color: #748cab;
     margin-top: 2px;
+    outline: none;
+    color: #f0ebdb;
 }
 
 input::placeholder{
@@ -71,6 +73,8 @@ input::placeholder{
     margin-top: 2px;
     resize: none;
     opacity: 500;
+    outline: none;
+    color: #f0ebdb;
 }
 
 textarea::placeholder{
@@ -85,4 +89,24 @@ textarea::placeholder{
     color: #f0ebdb;
     margin-top: 2%;
 }
+
+.progress-bar {
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: auto;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#progress {
+  height: 100%;
+  width: 0%;
+  background-color: #363e7e;
+  transition: width 0.3s ease;
+}
+
 

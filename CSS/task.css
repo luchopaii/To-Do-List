@@ -15,7 +15,7 @@
     border-radius: 8px;
     background-color: #748ca7;
     width: 300px;
-    height: 100px;
+    height: 150px;
     padding:  10px  10px;
     box-sizing: border-box;
     color: #f0ebdb;
@@ -65,4 +65,18 @@
 
 .btn-delete:hover {
     background-color: #e60000;
+}
+
+
+.btn-modify {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #1D2D44;
+    color: #f0ebdb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

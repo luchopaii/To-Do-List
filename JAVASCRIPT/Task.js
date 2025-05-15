@@ -4,6 +4,14 @@ const titleInput = document.querySelector('.input-title-task');
 const descInput = document.querySelector('.description-textarea');
 const taskList = document.querySelector('.task-list');
 const progressBar = document.getElementById('progress');
+function updateProgressBar() {
+    const total = tasks.length;
+    const completed = tasks.filter(task => task.completed).length;
+    const percent = total > 0 ? (completed / total) * 100 : 0;
+
+    progressBar.style.width = `${percent}%`;
+}
+
 
 // Obtener tareas existentes desde el localStorage
 // Si no hay tareas guardadas previamente, inicializa la lista de tareas como un arreglo vacío
@@ -45,8 +53,55 @@ function displayTasks() {
         // Crea el botón de eliminar la tarea pa eliminarla xd... nah basicamnete cuando se presiona el boton se ocupa la funcion delete que elimina la tarea en base al indice q tenga
         const delBtn = document.createElement('button');
         delBtn.className = 'btn-delete'; // Asigna una clase para el botón de eliminar
-        delBtn.textContent = 'X'; // Establece el texto 'X' en el botón
+        delBtn.textContent = '🗑️'; // Establece el texto 'X' en el botón
         delBtn.onclick = () => deleteTask(index); // Llama a la función de eliminar tarea al hacer clic
+
+                // Crear botón de modificar
+        const modifyBtn = document.createElement('button');
+        modifyBtn.textContent = '✏️';
+        modifyBtn.className = 'btn-modify';
+
+        // Evento al hacer clic en "Modify"
+        modifyBtn.onclick = () => {
+            // Crear inputs editables
+            const newTitleInput = document.createElement('input');
+            newTitleInput.type = 'text';
+            newTitleInput.value = task.title;
+            newTitleInput.className = 'edit-title';
+
+            const newDescInput = document.createElement('textarea');
+            newDescInput.value = task.description;
+            newDescInput.className = 'edit-desc';
+
+            const saveBtn = document.createElement('button');
+            saveBtn.textContent = 'Save';
+            saveBtn.className = 'btn-save';
+
+            // Limpiar contenido del <li>
+            li.innerHTML = '';
+            li.appendChild(checkbox); // Mantener checkbox
+            li.appendChild(newTitleInput);
+            li.appendChild(document.createElement('br'));
+            li.appendChild(newDescInput);
+            li.appendChild(saveBtn);
+
+            // Guardar cambios al hacer clic en Save
+            saveBtn.onclick = () => {
+                const newTitle = newTitleInput.value.trim();
+                const newDesc = newDescInput.value.trim();
+
+                if (newTitle === '' || newDesc === '') {
+                    alert('Both fields are required.');
+                    return;
+                }
+
+                tasks[index].title = newTitle;
+                tasks[index].description = newDesc;
+                saveTasks();
+                displayTasks(); // Volver a mostrar tareas actualizadas
+            };
+        };
+
 
         // Añade los elementos (checkbox, título, descripción y botón de eliminar) al <li>
         li.appendChild(checkbox);
@@ -54,9 +109,12 @@ function displayTasks() {
         li.appendChild(document.createElement('br')); // Añade un salto de línea entre el título y la descripción
         li.appendChild(desc);
         li.appendChild(delBtn); // Añade el botón de eliminar
+        li.appendChild(modifyBtn);
 
         // Añade el <li> (tarea completa) al contenedor de la lista de tareas
         taskList.appendChild(li);
+
+        updateProgressBar();
     });
 }
 
@@ -112,6 +170,8 @@ function deleteTask(index) {
 
     saveTasks();
     displayTasks();
+
+    updateProgressBar();
 }
 
 // Función para guardar las tareas en el localStorage
